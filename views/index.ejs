@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Share Images</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Photo Sharing</h1>
+		<p>Enter Image name then upload.</p>
+		<form action="/" method="POST" enctype="multipart/form-data">
+			<input required type="text" name="name">
+			<input type="file" name="data">
+
+			<input type="submit" name="submit">
+		</form>
+
+		<div class="frame">
+			<ul class="photos">
+				<% images.forEach((image) => {  %>
+					<li>
+						<p> <%= image.name %></p>
+						<img src="/temp/<%= image.data %>" alt="img" width="150px">
+					</li>
+				<% }) %>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
